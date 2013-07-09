@@ -1,0 +1,22 @@
+{
+	"name" : "base64-stream",
+	"description" : "Contains new Node v0.10 style stream classes for encoding / decoding Base64 data",
+	"keywords" : ["Base64", "stream", "streaming", "piping"],
+	"author" : "Ross Johnson <ross@mazira.com>",
+	"version" : "0.0.1",
+	"repository" : {
+		"type" : "git",
+		"url" : "http://github.com/mazira/base64-stream"
+	},
+	"scripts" : {
+		"test" : "mocha --reporter spec"
+	},
+	"dependencies" : {
+	},
+	"devDependencies" : {
+		"mocha" : "*",
+		"should" : "*"
+	},
+	"license" : "MIT",
+	"engine" : "node >= 10.0"
+}
