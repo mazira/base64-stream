@@ -16,27 +16,30 @@ This module currently requires Node v0.8 or higher. Support for versions prior t
 
 # Usage
 
-To use base64-stream
+This example encodes an image and pipes it to stdout.
 
 ```javascript
-var fs = require('fs');
-var Base64Encode = require('base64-stream').Encode;
+var http = require('http');
+var base64 = require('base64-stream');
+
+var img = 'http://farm3.staticflickr.com/2433/3973241798_86ddfa642b_o.jpg';
+http.get(img, function(res) {
+    if (res.statusCode === 200)
+        res.pipe(base64.encode()).pipe(process.stdout);
+});
+```
+
+This example takes in Base64 encoded data on stdin, decodes it, an pipes it to stdout.
+```javascript
+var base64 = require('base64-stream');
+process.stdin.pipe(base64.decode()).pipe(process.stdout);
+```
+
+You may also treat encode / decode as classes, so the following is also valid:
+```javascript
 var Base64Decode = require('base64-stream').Decode;
-
-var streamMailAttachment = function(req, res, next) {
-    var getAttachment(...);
-    attachmentStream.pipe(new Base64Encode()).pipe(res);
-
-    // would also work
-    // attachmentStream.pipe(Base64Encode()).pipe(res);
-}
-
-var uploadAttachment = function(req, res, next) {
-    var email = createEmail(...);
-
-    var stream = req.pipe(new Base64Encode());
-    email.streamAttachment(stream);
-}
+var stream = new Base64Decode();
+...
 ```
 
 # Testing
