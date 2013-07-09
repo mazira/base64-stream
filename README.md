@@ -2,7 +2,7 @@
 
 While Node.js has built-in support for Base64 data, it does not come with the ability to encode / decode data in a stream.
 
-This library contains a streaming Base64 encoder and a streaming Base64 decoder for use with Node.js. These streams are written using the new Node.js v0.10 [Stream interfaces](http://nodejs.org/api/stream.html) and are well covered with unit tests.
+This library contains a streaming Base64 encoder and a streaming Base64 decoder for use with Node.js. These streams are written using the new Node.js v0.10 [stream interfaces](http://nodejs.org/api/stream.html) and are well covered with unit tests.
 
 # Installation
 
