@@ -12,7 +12,7 @@ To install base64-stream
 
 # Requirements
 
-This module currently requires Node v0.10. Support for Node v0.8 may be added in the future using the [readable-stream](https://github.com/isaacs/readable-stream) plugin.
+This module currently requires Node v0.10. Support for Node v0.8 may be added in the future using the [readable-stream](https://github.com/isaacs/readable-stream) module.
 
 # Usage
 
