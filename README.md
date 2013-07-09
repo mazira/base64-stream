@@ -1,12 +1,20 @@
 # Introduction
 
-This library contains a streaming Base64 encoder and a streaming Base64 decoder. These streams are written using the new Node.js v0.10.0 `Stream` interfaces and are well covered with unit tests.
+While Node.js has built-in support for Base64 data, it does not come with the ability to encode / decode data in a stream.
 
-# Usage
+This library contains a streaming Base64 encoder and a streaming Base64 decoder for use with Node.js. These streams are written using the new Node.js v0.10 [Stream interfaces](http://nodejs.org/api/stream.html) and are well covered with unit tests.
+
+# Installation
 
 To install base64-stream
 
     npm install base64-stream
+
+# Requirements
+
+This module currently requires Node v0.10. Support for Node v0.8 may be added in the future using the [readable-stream](https://github.com/isaacs/readable-stream) plugin.
+
+# Usage
 
 To use base64-stream
 
@@ -30,3 +38,9 @@ var uploadAttachment = function(req, res, next) {
     email.streamAttachment(stream);
 }
 ```
+
+# Testing
+
+To run the unit tests
+
+    npm test

@@ -1,9 +1,9 @@
 {
 	"name" : "base64-stream",
-	"description" : "Contains new Node v0.10 style stream classes for encoding / decoding Base64 data",
-	"keywords" : ["Base64", "stream", "streaming", "piping"],
+	"description" : "Contains new Node.js v0.10 style stream classes for encoding / decoding Base64 data",
+	"keywords" : ["Base64", "stream", "streaming", "piping", "node", "node.js", "encode", "decode"],
 	"author" : "Ross Johnson <ross@mazira.com>",
-	"version" : "0.0.1",
+	"version" : "0.1.0",
 	"repository" : {
 		"type" : "git",
 		"url" : "http://github.com/mazira/base64-stream"
