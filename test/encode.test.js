@@ -71,4 +71,18 @@ describe('Base64Encode', function () {
 			], 'YW55IGNhcm5hbCBwbGVhc3VyZS4=');
 		});
 	});
+
+	describe('input in multiple chunks, line length specified', function () {
+		it('should properly encode a Buffer', function () {
+			testStream(base64encode(5), [
+				new Buffer('any carn'), new Buffer('al pl'), new Buffer('easur')
+			], 'YW55I\r\nGNhcm\r\n5hbCB\r\nwbGVh\r\nc3Vy');
+		});
+
+		it('should properly encode a Buffer and include padding', function () {
+			testStream(base64encode(5), [
+				new Buffer('any carn'), new Buffer('al pl'), new Buffer('easure.')
+			], 'YW55I\r\nGNhcm\r\n5hbCB\r\nwbGVh\r\nc3VyZ\r\nS4=');
+		});
+	});
 });
