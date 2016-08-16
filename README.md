@@ -24,10 +24,6 @@ http.get(img, function(res) {
     if (res.statusCode === 200)
         res.pipe(new Base64Encode()).pipe(process.stdout);
 });
-// or with node-fetch:
-fetch(img)
-.then(r=>r.body.pipe(new Base64Encode()).pipe(process.stdout))
-.catch(console.error);
 ```
 
 This example takes in Base64 encoded data on stdin, decodes it, an pipes it to stdout.
@@ -36,6 +32,19 @@ var {Base64Encode} = require('base64-stream');
 process.stdin.pipe(new Base64Encode()).pipe(process.stdout);
 ```
 
+## options:
+
+`Base64Encode` can take an optional object `{lineLength: number, prefix: string}`  
+The prefix is useful for prepending for example `data:image/png;base64,` to make a base64 URL.  
+This example proxies an image url, and send the base64 string in response.
+
+```
+app.get('/i/*', function(req, res){ // using express for example
+	fetch(req.params[0]) // using node-fetch
+	.then(r=>r.body.pipe(new Base64Encode({prefix:`data:${r.headers.get('content-type')};base64,`})).pipe(res))
+	.catch(console.error);
+});
+```
 
 # Requirements
 
