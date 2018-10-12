@@ -26,5 +26,9 @@
     "should": "*"
   },
   "license": "MIT",
+  "files": [
+    "lib",
+    "index.js"
+  ],
   "engine": "node >= 0.8.0"
 }
