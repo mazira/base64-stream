@@ -12,7 +12,7 @@
     "decode"
   ],
   "author": "Ross Johnson <ross@mazira.com>",
-  "version": "0.1.4",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
     "url": "http://github.com/mazira/base64-stream"
