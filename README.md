@@ -28,8 +28,8 @@ http.get(img, function(res) {
 
 This example takes in Base64 encoded data on stdin, decodes it, an pipes it to stdout.
 ```javascript
-var {Base64Encode} = require('base64-stream');
-process.stdin.pipe(new Base64Encode()).pipe(process.stdout);
+var {Base64Decode} = require('base64-stream');
+process.stdin.pipe(new Base64Decode()).pipe(process.stdout);
 ```
 
 ## options:
